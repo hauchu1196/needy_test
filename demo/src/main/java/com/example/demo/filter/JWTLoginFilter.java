@@ -31,16 +31,8 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
 			throws AuthenticationException, IOException, ServletException {
-//		User user = new ObjectMapper().readValue(request.getInputStream(), User.class);
-//		System.out.println("Ok " + request.getReader().readLine());
 		ObjectMapper mapper = new ObjectMapper();
-//		mapper.setSerializationInclusion(Include.NON_NULL);
-		String str = request.getReader().readLine();
-		System.out.println("str: " + str);
-		User user = mapper.readValue(str, User.class);
-		System.out.println("OK 1 " + mapper.readValue(request.getReader().readLine(), User.class));
-//		User user = new User(request.getParameter("username"), request.getParameter("password"));
-		System.out.println(user.toString());
+		User user = mapper.readValue(request.getInputStream(), User.class);
 		return getAuthenticationManager().authenticate(
 				new UsernamePasswordAuthenticationToken(
 						user.getUsername(),
@@ -52,7 +44,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 			Authentication authResult) throws IOException, ServletException {
 		TokenAuthenticationService.addAuthentication(response, authResult.getName());
-		response.getWriter().print("{code: 200}");
+		response.getWriter().print("{\"code\": 200}");
 	}
 
 }
