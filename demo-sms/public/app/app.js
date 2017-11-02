@@ -18,9 +18,9 @@ app.run(function ($rootScope, $state, $location, $cookies, $http, $window, Login
         var restrictedPage = $.inArray($location.path(), ['/login']) === -1;
         console.log(restrictedPage);
         if (restrictedPage) {
-            $location.path('/page/home');
+            // $location.path('/page/home');
         } else {
-            $location.path('/page/home');
+            // $location.path('/page/home');
         }
 
     })
