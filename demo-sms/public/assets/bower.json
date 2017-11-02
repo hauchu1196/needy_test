@@ -1,0 +1,33 @@
+{
+  "name": "Plugin",
+  "authors": [
+    "haucv <hauchu1196@gmail.com>"
+  ],
+  "description": "Use bower install to install all frontend plugin",
+  "main": "plugin",
+  "keywords": [
+    "plugin"
+  ],
+  "license": "MIT",
+  "homepage": "DEMO",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-ui-router": "^1.0.5",
+    "angular-cookies": "^1.6.5",
+    "angular-ui": "^0.4.0",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "angular-bootstrap": "^2.5.0",
+    "jquery-slimscroll": "^1.3.8",
+    "angular-translate": "^2.15.2",
+    "metismenu": "^2.7.0",
+    "angular-material-icons": "^0.7.1",
+    "jasny-bootstrap": "^3.1.3",
+    "ng-file-upload": "^12.2.13",
+    "jgrowl": "jgrowl#^1.4.6",
+    "angular-translate-loader-static-files": "^2.15.2",
+    "underscore": "^1.8.3",
+    "ngstorage": "^0.3.11",
+    "angular-sanitize": "^1.6.6"
+  }
+}
