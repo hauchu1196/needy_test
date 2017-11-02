@@ -13,6 +13,10 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             url: '/login',
             controller: 'LoginCtr',
             templateUrl: '/app/components/login/login.view.html'
+        }).state('page.management-store', {
+            url: '/management-store',
+            controller: 'ManagementStoreCtr',
+            templateUrl: '/app/components/management-store/management-store.view.html'
         })
 
         $locationProvider.html5Mode(true);

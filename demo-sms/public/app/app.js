@@ -14,6 +14,11 @@ app.run(function ($rootScope, $state, $location, $cookies, $http, $window, Login
         return angular.isUndefined(val) || val === null
     };
 
+    $rootScope.globals = $cookies.getObject('globals') || {};
+    if ($rootScope.globals.access_token) {
+        $http.defaults.headers.common['Authorization'] = $rootScope.globals.access_token;
+    }
+
     $rootScope.$on('$locationChangeStart', function (event, next, current, AuthenticationService) {
         var restrictedPage = $.inArray($location.path(), ['/login']) === -1;
         console.log(restrictedPage);
