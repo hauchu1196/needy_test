@@ -7,9 +7,13 @@ app.controller('LoginCtr', ["$localStorage", "$scope", "$state", "ToastService",
             };
             console.log('login', data);
             LoginService.login(data).then(function (res) {
-                console.log(res);
+                if (res.data.code === 200) {
+                    $state.go("page.home");
+                } else {
+                    ToastService.show("WARNING", 'Đăng nhập thất bại');
+                }
             }, function (err) {
-                console.log(err);
+                alert("Đăng nhập thất bại");
             })
 
         }

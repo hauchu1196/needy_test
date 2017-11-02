@@ -31,8 +31,8 @@ public class UserRepository implements BaseRepository<User> {
 	@Override
 	public User add(User t) {
 		// TODO Auto-generated method stub
-//		jdbcTemplate.update("INSERT INTO users(username, password, name) VALUES (?, ?, ?)", t.getUsername(),
-//				t.getPassword(), t.getName());
+		jdbcTemplate.update("INSERT INTO users(username, password, name) VALUES (?, ?, ?)", t.getUsername(),
+				t.getPassword(), t.getName());
 		return null;
 	}
 
@@ -49,14 +49,13 @@ public class UserRepository implements BaseRepository<User> {
 	}
 
 	public Optional<User> findByUsername(String username) {
-//		String sql = "SELECT * FROM users WHERE username = ?";
-//		User user = jdbcTemplate.queryForObject(
-//				sql, new Object[] {username}, 
-//				(rs, rowNum) -> new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"),
-//						rs.getString("name")));
-//		System.out.println(user.toString());
-//		return Optional.of(user);
-		return null;
+		String sql = "SELECT * FROM users WHERE username = ?";
+		User user = jdbcTemplate.queryForObject(
+				sql, new Object[] {username}, 
+				(rs, rowNum) -> new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"),
+						rs.getString("name")));
+		System.out.println(user.toString());
+		return Optional.of(user);
 	}
 
 }
