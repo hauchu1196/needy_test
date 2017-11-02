@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0" ng-controller="NavbarCtr">
+    <div class="navbar-header">
+        <a id="navbar-minimalize" class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <ul class="nav navbar-top-links navbar-right">
+        <li>
+            <a href="#" ng-click="logout()">
+                <i class="fa fa-sign-out"></i> Logout
+            </a>
+        </li>
+    </ul>
+</nav>
+<script>
+    $(document).on("click", "#navbar-minimalize", function (e) {
+        e.preventDefault();
+        console.log($("body").hasClass("mini-navbar"))
+        if ($("body").hasClass("mini-navbar")) {
+            $("body").removeClass("mini-navbar")
+        }
+        else {
+            $("body").addClass("mini-navbar");
+        }
+        SmoothlyMenu();
+    });
+</script>
