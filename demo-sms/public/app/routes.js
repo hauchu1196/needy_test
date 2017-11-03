@@ -17,6 +17,10 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             url: '/management-store',
             controller: 'ManagementStoreCtr',
             templateUrl: '/app/components/management-store/management-store.view.html'
+        }).state('page.product', {
+            url: '/product',
+            controller: 'ProductCtr',
+            templateUrl: '/app/components/product/product.view.html'
         })
 
         $locationProvider.html5Mode(true);
